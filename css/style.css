@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+header {
+    font-size: 30px;
+}
+code, pre {
+    background-color: gray;
+    font-family: consolas;
+    border-radius: 5px;
+    padding: 1px;
+}
+div .container {
+    display: flex;
+}
+
+#navbar ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+div .left-container {
+    background-color: burlywood;
+    width: 25%;
+    display: flex;
+}
+
+div .right-container {
+    background-color: burlywood;
+    width: 70%;
+    display: flex;
+}
