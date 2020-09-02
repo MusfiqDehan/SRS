@@ -17,6 +17,11 @@ header {
     font-size: 30px;
 }
 
+header u {
+    text-decoration: none;
+    border-bottom: 3px solid #fff;
+}
+
 #navbar {
     position: fixed;
     min-width: 290px;
@@ -56,6 +61,18 @@ header {
     color: rgba(0, 0, 0, 0.8);
 }
 
+#navbar #credit {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    min-width: 290px;
+    width: 300px;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 12px 0 12px 0;
+    z-index: 3;
+}
+
 #main-doc header {
     text-align: left;
     margin: 0;
@@ -75,4 +92,9 @@ section article {
 
 section li {
     margin: 15px 0 0 20px;
+}
+
+hr {
+    color: #fff;
+    margin: 50px 0 50px 0;
 }
