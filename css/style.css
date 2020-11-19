@@ -3,7 +3,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     background-color: rgba(0, 0, 0, 0.9);
     color: rgba(255, 255, 255, 1);
 }
@@ -148,5 +149,29 @@ hr {
 
     #navbar #credit {
         width: 100%;
+    }
+}
+
+/* *****************Print Query****************** */
+
+@media print {
+    body {
+        background-color: #fff;
+        color: black;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    #main-doc {
+        margin-left: 0;
+        position: relative;
+    }
+
+    #main-doc header {
+        text-align: center;
+        font-weight: 600;
+        text-decoration: underline;
     }
 }
