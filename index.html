@@ -3,185 +3,594 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/style.css">
-        <title>Technical Documentation of C</title>
+        <title>Software Requirements Specification for Home Rental System</title>
     </head>
 
     <body>
-        <nav id="navbar">
-            <header>C Language Docs</header>
+        <!----------------- Cover Page (Only for print) ------------------------->
+        <div class="cover-page">
+            <h1 class="top-bar">Software Requirements</h1> 
+            <h1>Specification</h1>
+            <p class="for">for</p>
+            <h1>BariBhara</h1>
+            <p>Version 1.0</p>
+            <p>Prepared by Team Gigahertz</p>
+            <p>North South University</p>
+            <p>21st November, 2020</p>
+            <br>
+        </div>
+
+        <!----------------- Table of Contents (Only for print) ----------------------->
+        <div class="toc">
+            <h1>Table of Contents</h1>
+   
+            <p class="highlight">Table of Contents.........................................................................................................................................................................</p>
+            <p class="highlight">Revision History..........................................................................................................................................................................</p>
+            
+            <ol class="main-toc">
+                <li><span class="highlight">Introduction...................................................................................................................................................................</span>
+                  <ol>
+                    <li>Purpose............................................................................................................................................................................</li>
+                    <li>Document Conventions....................................................................................................................................................</li>
+                    <li>Intended Audience and Reading Suggestions........................................................................................................................................</li>
+                    <li>Product Scope.............................................................................................................................................................</li>
+                    <li>References..............................................................................................................................................................</li>
+                  </ol>
+                </li>
+
+                <li><span class="highlight">Overall Description..........................................................................................................................................................</span>
+                    <ol>
+                        <li>Product Perspective.........................................................................................................................................................</li>
+                        <li>Product Functions...........................................................................................................................................................</li>
+                        <li>User Classes and Characteristics.......................................................................................................................................</li>
+                        <li>Operating Environment......................................................................................................................................</li>
+                        <li>Design and Implementation Constraints...........................................................................................................................................</li>
+                        <li>User Documentation.......................................................................................................................................................................</li>
+                        <li>Assumptions and Dependencies...........................................................................................................................................................</li>
+                    </ol>
+                </li>
+
+                <li><span class="highlight">External Interface Requirements.........................................................................................................................</span>
+                  <ol>
+                    <li>User Interfaces...........................................................................................................................................................................</li>
+                    <li>Hardware Interfaces................................................................................................................................................................................</li>
+                    <li>Software Interfaces........................................................................................................................................................................................</li>
+                    <li>Communications Interfaces.............................................................................................................................................................</li>
+                  </ol>
+                </li>
+
+                <li><span class="highlight">System Features........................................................................................................................................................................</span>
+                    <ol>
+                      <li>System Feature 1........................................................................................................................................................................................</li>
+                      <li>System Feature 2..................................................................................................................................................................................</li>
+                    </ol>
+                </li>
+
+                <li><span class="highlight">Other Nonfunctional Requirements....................................................................................................................................................</span> 
+                    <ol>
+                      <li>Performance Requirements...........................................................................................................................................</li>
+                      <li>Safety Requirements...................................................................................................................................................</li>
+                      <li>Security Requirements...............................................................................................................................................</li>
+                      <li>Software Quality Attributes.........................................................................................................................</li>
+                      <li>Business Rules...........................................................................................................................................................</li>
+                    </ol>
+                </li>
+
+                <li class="highlight">Other Requirements..................................................................................................................................................</li>
+            </ol>
+
+            <p class="highlight">Appendix A: Glossary...................................................................................................................................................</p>
+            <p class="highlight">Appendix B: Analysis Models.................................................................................................................................................</p>
+            <p class="highlight">Appendix C: To Be Determined List.................................................................................................................................</p>
+        </div>
+
+        <!----------------- Revision History (Only for print) ----------------------->
+        <div class="revision-history">
+            <h1>Revision History</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Reason For Changes</th>
+                    <th>Version</th>
+                </tr>
+
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+            </table>
+        </div>
+
+        <!----------------------- Left Navbar ----------------------->
+        <nav id="navbar">            
+            <header>
+                <img src="images/house.png" alt="House logo">
+                <span>SRS</span> 
+            </header>
             <ul>
-                <li class="nav-link"><a href="#Introduction">Introduction</a></li>
-                <li class="nav-link"><a href="#Pros_and_Cons">Pros and Cons</a></li>
-                <li class="nav-link"><a href="#Data_Types">Data Types</a></li>
-                <li class="nav-link"><a href="#Variables">Variables</a></li>
-                <li class="nav-link"><a href="#String">String</a></li>
-                <li class="nav-link"><a href="#Function">Function</a></li>
+                <li class="nav-link dropdown">
+                    <a href="#Introduction">Introduction</a>
+                    <div class="dropdown-content">
+                        <a href="#Purpose">Purpose</a>
+                        <a href="#Document_Conventions">Document Conventions</a>
+                        <a href="#Intended_Audience_and_Reading_Suggestions">Intended Audience and Reading Suggestions</a>
+                        <a href="#Product_Scope">Product Scope</a>
+                        <a href="#References">References</a>
+                    </div>
+                </li>
+
+                <li class="nav-link dropdown">
+                    <a href="#Overall_Description">Overall Description</a>
+                    <div class="dropdown-content">
+                        <a href="#Product_Perspective">Product Perspective</a>
+                        <a href="#Product_Functions">Product Functions</a>
+                        <a href="#User_Classes_and_Characteristics">User Classes and Characteristics</a>
+                        <a href="#Operating_Environment">Operating Environment</a>
+                        <a href="#Design_and_Implementation_Constraints">Design and Implementation Constraints</a>
+                        <a href="#User_Documentation">User Documentation</a>
+                        <a href="#Assumptions_and_Dependencies">Assumptions and Dependencies</a>
+                    </div>
+                </li>
+
+                <li class="nav-link dropdown">
+                    <a href="#External_Interface_Requirements">External Interface Requirements</a>
+                    <div class="dropdown-content">
+                        <a href="#User_Interfaces">User Interfaces</a>
+                        <a href="#Hardware_Interfaces">Hardware Interfaces</a>
+                        <a href="#Software_Interfaces">Software Interfaces</a>
+                        <a href="#Communications_Interfaces">Communications Interfaces</a>
+                    </div>
+                </li>
+
+                <li class="nav-link dropdown">
+                    <a href="#System_Features">System Features</a>
+                    <div class="dropdown-content">
+                        <a href="#System_Feature_1">System Feature 1</a>
+                        <a href="#System_Feature_2">System Feature 2</a>
+                        <a href="#System_Feature_3">System Feature 3</a>
+                    </div>
+                </li>
+
+                <li class="nav-link dropdown">
+                    <a href="#Other_Nonfunctional_Requirements">Other Nonfunctional Requirements</a>
+                    <div class="dropdown-content">
+                        <a href="#Performance Requirements">Performance Requirements</a>
+                        <a href="#Safety_Requirements">Safety Requirements</a>
+                        <a href="#Security_Requirements">Security Requirements</a>
+                        <a href="#Software_Quality_Attributes">Software Quality Attributes</a>
+                        <a href="#Business_Rules">Business Rules</a>
+                    </div>
+                </li>
+
+                <li class="nav-link dropdown">
+                    <a href="#Other_Requirements">Other Requirements</a>
+                    <!-- <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div> -->
+                </li>
+
+                <li class="nav-link">
+                    <a href="#appendixA">Appendix A: Glossary</a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#appendixB">Appendix B: Analysis Models</a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#appendixC">Appendix C: To Be Determined List</a>
+                </li>
             </ul>
-            <footer id="credit">Made with ❤ by DEHAN</footer>
+            <footer id="credit">&copy; 2020 | Team Gigahertz</footer>
         </nav>
 
+
+        <!----------------- Right Side's Main Content ----------------------->
         <main id="main-doc">
             <section id="Introduction" class="main-section">
-                <header>Introduction</header>
+                <h1><span class="print-only">1. </span>Introduction</h1>
                 <article>
+                    <h2 id="Purpose"><span class="print-only">1.1 </span>Purpose</h2>
                     <p>
-                        C Language is one of the most popular programming language. Actually
-                        from the <code>C</code> language programming is upgrading very fast.
-                        It is very popular for understanding the basic of programming. It also
-                        helps someone to understand <code>memory</code> utilization.
+                        The purpose of this document is to present a detailed description of the BariBhara. 
+                        It will explain the purpose and features of the system, the interfaces of the system, 
+                        what the system will do, the constraints under which it must operate and how the system
+                         will react to external stimuli. 
+                        This document is intended for both the stakeholders and the developers of the system.
+
                     </p>
+
+                    <h2 id="Document_Conventions"><span class="print-only">1.2 </span>Document Conventions</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem, 
-                        tempora corrupti dolorum at, amet perferendis maiores sequi deserunt, 
-                        impedit totam laborum nesciunt recusandae rem molestiae molestias?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem,
-                        tempora corrupti dolorum at, amet perferendis maiores sequi deserunt,
-                        impedit totam laborum nesciunt recusandae rem molestiae molestias?
+                        We make our SRS in two formats, html viewable format
+                        and printer friendly format. But both format are created using only html and css.
+                        For html viewable format we used 'open-sans', sans-rerif font and we keep font 
+                        size 16px. On the other hand, for the printable format the document is styled 
+                        according to standard IEEE SRS template.
+                        'Times New Roman', times, serif font. Here for heading we use Times New Roman 18 and 
+                        Times New Roman 14 for sub-heading and Arial 11 for body and paragraph.
+                    </p>
+
+                    <h2 id="Intended_Audience_and_Reading_Suggestions"><span class="print-only">1.3 </span>Intended Audience and Reading Suggestions</h2>
+                    <p>
+                        This document is intended for developers, project managers, 
+                        marketing staff, users, testers, and documentation writers. 
+
+                    </p>
+
+                    <h2 id="Product_Scope"><span class="print-only">1.4 </span>Product Scope</h2>
+                    <p>
+                        The main purpose of our application is to help the people to find their
+                        desired house for rent easily and smartly.
+                        This software will be smart home rental system for the people of Bangladesh.
+                        By using the web version of the anyone can search for available home for rent.
+                        House owner can post ads for their home which is available for rent.
+                        Rent Seekers can also view different kinds of ads posted by the house owners.
+                        And by using our amazing android app, Rent Seekers can point towards any road
+                        or house using a camera filter to see available house for rent. They will see
+                        an To-Let sign in front of the available house which will be made using
+                        augmented reality concept. 
+                        We can also collaborate with different house rental organization or software
+                        company from which we can earn money also.
+
+                    </p>
+
+                    <h2 id="References"><span class="print-only">1.5 </span>References</h2>
+                    <p>
+                        Not Applicable.
+
                     </p>
                 </article>
                 <hr>
             </section>
 
-            <section id="Pros_and_Cons" class="main-section">
-                <header>Pros and Cons</header>
+            <section id="Overall_Description" class="main-section">
+                <h1><span class="print-only">2.  </span>Overall Description</h1>
                 <article>
-                    <p>Though C is very popular and widely used language. It has many pros
-                        and cons. Thats why some likes it and some doesn't like it.
-                        <strong>Lets discuss some of its <em>Pros and Cons</em>:</strong>
+                    <h2 id="Product_Perspective"><span class="print-only">2.1  </span>Product Perspective</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
                     </p>
-                    <ol>
-                        <li>It is very popular.</li>
-                        <li>It has many resourse.</li>
-                        <li>It is very fast.</li>
-                        <li>It is widely used.</li>
-                        <li>It is used in unix operating system.</li>
-                        <li>It is difficult to learn.</li>
-                    </ol>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Vero dicta doloremque facere totam sit laboriosam obcaecati 
-                        necessitatibus sint alias accusamus maiores, itys jusjdj
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam. 
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                         harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
+
+                    <h2 id="Product_Functions"><span class="print-only">2.2  </span>Product Functions</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
                     </p>
-                </article> 
+
+                    <h2 id="User_Classes_and_Characteristics"><span class="print-only">2.3  </span>User Classes and Characteristics</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+
+                    <h2 id="Operating_Environment"><span class="print-only">2.4  </span>Operating Environment</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+
+                    <h2 id="Design_and_Implementation_Constraints"><span class="print-only">2.5  </span>Design and Implementation Constraints</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+
+                    <h2 id="User_Documentation"><span class="print-only">2.6  </span>User Documentation</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+
+                    <h2 id="Assumptions_and_Dependencies"><span class="print-only">2.7  </span>Assumptions and Dependencies</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+                </article>
                 <hr>
             </section>
 
-            <section id="Data_Types" class="main-section">
-                <header>Data Types</header>
+            <section id="External Interface Requirements" class="main-section">
+                <h1><span class="print-only">3.  </span>External Interface Requirements</h1>
                 <article>
+                    <h2 id="User_Interfaces"><span class="print-only">3.1 </span>User Interfaces</h2>
                     <p>
-                        There are many different data types in C.
-                        <br><br><strong>Some of them are:</strong>
-                        <ol>
-                            <li>Integer -> <code>int</code></li>
-                            <li>Boolean -> <code>bool</code></li>
-                            <li>Floating point -> <code>float</code></li>
-                            <li>Double -> <code>double</code></li>
-                            <li>Long -> <code>long</code></li>
-                        </ol>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
                     </p>
+
+                    <h2 id="Hardware_Interfaces"><span class="print-only">3.2 </span>Hardware Interfaces</h2>
                     <p>
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
                     </p>
-                </article> 
+
+                    <h2 id="Software_Interfaces"><span class="print-only">3.3 </span>Software Interfaces</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+
+                    <h2 id="Communications_Interfaces"><span class="print-only">3.4  </span>Communications Interfaces</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+                </article>
                 <hr>
             </section>
 
-            <section id="Variables" class="main-section">
-                <header>Variables</header>
+            <section id="System_Features" class="main-section">
+                <h1><span class="print-only">4. </span>System Features</h1>
                 <article>
-                    <p>
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
-                    </p>
-                    <p>
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
-                        <code>
-                            int a, b;
-                            int c = a + b;
-                        </code>
-                    </p>
-                </article> 
+                    <h2 id="System_Feature_1"><span class="print-only">4.1 </span>Feature 1: Log In</h2>
+                    <div class="feature-details">
+                        <h3><span class="print-only">4.1.1 </span>Description and Priority</h3>
+                        <p>
+                            This will be a primary feature and the main actor of this feature is
+                            House Owner.
+                        </p>
+                        <p>
+                            To access this rental system House Owner will Log In with his/her Google
+                            account to verify his identity. He/She can also log out him/her from 
+                            the system. 
+                        </p>
+
+                        <h3><span class="print-only">4.1.2 </span>Stimulus/Response Sequences</h3>
+                        <table>
+                            <tr>
+                                <th>Actor Actions</th>
+                                <th>System Responses</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    1something
+
+                                </td>
+                                <td>
+                                    2something
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3something
+
+                                </td>
+                                <td>
+                                    4something
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5something
+
+                                </td>
+                                <td>
+                                    6something
+                                    
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3><span class="print-only">4.1.3 </span>Functional Requirements</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus 
+                            aut distinctio maiores porro excepturi nostrum molestiae illum recusandae, 
+                            odio obcaecati iste 
+                            iusto necessitatibus unde neque aliquam optio quasi delectus commodi?
+                        </p>
+                    </div>
+
+                    <h2 id="System_Feature_2"><span class="print-only">4.2 </span>Feature 2: Post Advertise</h2>
+                    <div class="feature-details">
+                        <h3><span class="print-only">4.1.1 </span>Description and Priority</h3>
+                        <p>
+                            This will be a primary feature and the main actor of this feature is
+                            House Owner.
+                        </p>
+                        <p>
+                            To access this rental system House Owner will Log In with his/her Google
+                            account to verify his identity. He/She can also log out him/her from 
+                            the system. 
+                        </p>
+
+                        <h3><span class="print-only">4.1.2 </span>Stimulus/Response Sequences</h3>
+                        <table>
+                            <tr>
+                                <th>Actor Actions</th>
+                                <th>System Responses</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    1something
+
+                                </td>
+                                <td>
+                                    2something
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3something
+
+                                </td>
+                                <td>
+                                    4something
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5something
+
+                                </td>
+                                <td>
+                                    6something
+                                    
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3><span class="print-only">4.1.3 </span>Functional Requirements</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus 
+                            aut distinctio maiores porro excepturi nostrum molestiae illum recusandae, 
+                            odio obcaecati iste 
+                            iusto necessitatibus unde neque aliquam optio quasi delectus commodi?
+                        </p>
+                    </div>
+                </article>
                 <hr>
             </section>
 
-            <section id="String" class="main-section">
-                <header>String</header>
+            <section id="Other_Nonfunctional_Requirements" class="main-section">
+                <h1><span class="print-only">5. </span>Other Nonfunctional Requirements</h1>
                 <article>
+                    <h2 id="Performance_Requirements"><span class="print-only">5.1 </span>Performance Requirements</h2>
                     <p>
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
                     </p>
-                    <code>String str = "I am DEHAN";</code>
+
+                    <h2 id="Safety_Requirements"><span class="print-only">5.2 </span>Safety Requirements</h2>
                     <p>
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
                     </p>
-                </article> 
+
+                    <h2 id="Security_Requirements"><span class="print-only">5.3 </span>Security Requirements</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+
+                    <h2 id="Software_Quality_Attributes"><span class="print-only">5.4 </span>Software Quality Attributes</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+
+                    <h2 id="Business_Rules"><span class="print-only">5.5 </span>Business Rules</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.
+
+                    </p>
+                </article>
                 <hr>
             </section>
 
-            <section id="Function" class="main-section">
-                <header>Function</header>
+            <section id="Other_Requirements" class="main-section">
+                <h1><span class="print-only">6. </span>Other Requirements</h1>
                 <article>
                     <p>
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.    
+                    </p> 
+                </article>
+                <hr>                              
+            </section>
 
-                        <br><br><strong>Examples of function: </strong>
-
-                        <pre>
-                            int functionName()
-                            {
-                                statements;
-                                statements;
-
-                                return int;
-                            }
-                        </pre>
-                    </p>
-
+            <section id="appendixA" class="main-section">
+                <h1>Appendix A: Glossary</h1>
+                <article>
                     <p>
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
-                        At dolores ducimus ipsa, mollitia debitis veniam quis ab aliquam.
-                        Velit rem illo nemo voluptatum,amet consectetur adipisicing elit
-                        harum repellat magni reprehenderit autem molestias fuga!
-                        illo rerum magnam aliquid quidem ab eligendi assumenda nulla?
-                    </p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.    
+                    </p> 
+                </article>
+                <hr>                
+            </section>
+
+            <section id="appendixB" class="main-section">
+                <h1>Appendix B: Analysis Models</h1>
+                <article>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.    
+                    </p> 
+                </article>
+                <hr>                
+            </section>
+
+            <section id="appendixC" class="main-section">
+                <h1>Appendix C: To Be Determined List</h1>
+                <article>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Qui magnam asperiores excepturi, enim facilis tenetur 
+                        sint consectetur praesentium cum vitae amet similique 
+                        voluptate accusantium laborum et laudantium officia eum veniam.    
+                    </p> 
                 </article>               
             </section>
         </main> 
