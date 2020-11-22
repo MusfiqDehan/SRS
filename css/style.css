@@ -92,6 +92,10 @@ table, th, td {
     border: 1px solid #000;
 }
 
+th, td {
+    padding: 15px;
+}
+
 #System_Features table, th, td {
     border: 1px solid #fff;
 }
@@ -184,7 +188,7 @@ header u {
   /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: relative;
     background-color: rgba(0, 0, 0, 0.9);
     min-width: 300px;
     z-index: 1;
@@ -261,10 +265,27 @@ hr {
 
 #System_Features .feature-details {
     padding-left: 25px;
+    padding-bottom: 30px;
 }
 
-#System_Features h2 {
-    padding-top: 20px;
+#System_Features a {
+    color: #fff;
+}
+
+.useCaseDiagram {
+    padding-left: 30px;
+    width: 80%;
+}
+
+
+/* *******************Mock Ups******************** */
+
+.mockup-section {
+    padding: 20px 0 240px 20px;
+}
+
+.mockup-img {
+    width: 80%;
 }
 
 
@@ -328,6 +349,10 @@ hr {
         font-family: 'Times New Roman', Times, serif;
     }
 
+    th, td {
+        padding: 0;
+    }
+
     section {
         padding-bottom: 50px;
     }
@@ -369,6 +394,10 @@ hr {
         display: none;
     }
 
+    #mockups {
+        display: none;
+    }
+
     hr {
         display: none;
     }
@@ -386,7 +415,16 @@ hr {
         border: 1px solid #000;
     }
 
-    #System_Features table {
+    #System_Features, #appendixA table {
         font-size: 11px;
+    }
+
+    #System_Features a {
+        display: none;
+    }
+
+    .list-arial-11 li {
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 }
