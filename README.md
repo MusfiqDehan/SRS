@@ -1,4 +1,4 @@
-### SRS
+# SRS
 
 Software Requirement Specification
 
