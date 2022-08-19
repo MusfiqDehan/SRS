@@ -1,4 +1,4 @@
-# SRS
+<h1 align="center"> SRS </h1>
 
 Software Requirement Specification
 
